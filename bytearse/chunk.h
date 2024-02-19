@@ -2,6 +2,7 @@
 #define bytearse_chunk_h
 
 #include "common.h"
+#include "value.h"
 
 // Opcodes dataset.
 typedef enum {
@@ -12,6 +13,7 @@ typedef struct {
     int useCount;
     int capacity;
     uint8_t* code;
+    ValueArray constants;
 } Chunk;
 
 void initChunk(Chunk* chunk);

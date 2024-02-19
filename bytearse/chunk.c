@@ -8,6 +8,7 @@ void initChunk(Chunk* chunk)
     chunk->useCount = 0;
     chunk->capacity = 0;
     chunk->code = NULL;
+    initValueArray(&chunk->constants);
 }
 
 void freeChunk(Chunk* chunk)
