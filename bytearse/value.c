@@ -17,10 +17,13 @@ void writeValueArray(ValueArray* array, Value value)
 	{
 		int oldCapacity = array->capacity;
 
+		// Updates max capacity to fit new value in array then grows the array.
 		array->capacity = GROW_CAPACITY(oldCapacity);
 		array->values = GROW_ARRAY(Value, array->values, oldCapacity, array->capacity);
 	}
 
+	// After successfully growing the Value Array we can write the new value to it -
+	// and increase the value count on the Value Array.
 	array->values[array->count] = value;
 	array->count++;
 }

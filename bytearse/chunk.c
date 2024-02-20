@@ -5,8 +5,8 @@
 
 void initChunk(Chunk* chunk)
 {
-    chunk->useCount = 0;
-    chunk->capacity = 0;
+    chunk->useCount = 0; // Used for keeping count of objects being used.
+    chunk->capacity = 0; // Max capacity of the chunk array.
     chunk->code = NULL;
     chunk->lines = NULL;
     initValueArray(&chunk->constants);
